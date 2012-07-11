@@ -1,0 +1,28 @@
+﻿@import url('style.css');
+
+header,
+div[role='main'],
+footer { margin: 0 auto; width: 960px; }
+
+aside, section#todos { float: left; }
+aside { width: 150px; padding-right: 10px; }
+section#todos { width: 800px; }
+
+/* Header ---------------------------------------------- */
+header { height: 60px; margin-top: 40px; }
+    header div { color: #551a8b; float: left; font: normal 30px/1.2em "Century Gothic"; height: 36px; width: 160px; }
+    header nav { float: left; height: 20px; padding-top: 6px; width: 800px; }
+        header nav a { border-bottom: solid 4px #808080; color: #000; display: inline-block; padding: 0 20px 3px 20px; text-decoration: none; }
+        header nav a.selected { border-bottom-color: #06e; color: #06e; }
+        header nav a:hover { border-color: #06e; color: #06e; }
+        
+/* Todo items ------------------------------------------ */
+#todos {  }
+    #todos div.task { margin: 0 0 15px 0; }
+    #todos > div.task { background-color: #efefef; border-left: solid 3px #551a8b; padding: 10px; }
+    #todos > div.task.selected { background-color: #cee0f8; }
+    #todos h1 { color: #f52672; font: normal 16px/1.3em 'Century Gothic'; margin: 0; text-transform: uppercase; }
+    #todos div.comments { font: normal 11px/1.3em Consolas; margin-top: 8px; }
+    #todos div.comments:empty { display: none; }
+
+div.task div.subTasks { display: none; padding: 5px 0 5px 12px; }
