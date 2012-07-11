@@ -6,6 +6,7 @@ iqit.Todo = function (id) {
     this.id = id;
     this.title = "";
     this.comment = "";
+    this.subtasks = new Array();
 }
 
 iqit.Todo.prototype = {

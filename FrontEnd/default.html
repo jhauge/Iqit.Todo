@@ -18,8 +18,10 @@
     <link rel="stylesheet" href="/css/site.css">
 
     <script src="/scripts/libs/modernizr-2.5.3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="/scripts/knockout-2.1.0.js"></script>
-
+    <script src="/scripts/classes/todo.js"></script>
+    <script src="/scripts/models/default.js"></script>
 </head>
 <body>
     <header>
@@ -32,82 +34,10 @@
     </header>
     <div role="main">
         <aside>Tags</aside>
-        <section id="todos">
-            <div id="task1" class="task selected">
-                <h1>AMS PDF rendering</h1>
-                <div class="comments">
-                    - Husk at splitte ud i flere masterpages
-                </div>
-                <div class="subTasks">
-                    <div class="task">
-                        <h1>Masterpage</h1>
-                    </div>
-                    <div class="task">
-                        <h1>Print stylesheet</h1>
-                        <div class="comments">
-                            - Skal stadig registreres som @media=screen
-                            - Mål i mm.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="task2" class="task">
-                <h1>MDI Source code</h1>
-                <div class="comments">
-                    - Husk at splitte ud i flere masterpages
-                </div>
-                <div class="subTasks">
-                    <div class="task">
-                        <h1>Masterpage</h1>
-                    </div>
-                    <div class="task">
-                        <h1>Print stylesheet</h1>
-                        <div class="comments">
-                            - Skal stadig registreres som @media=screen
-                            - Mål i mm.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="task3" class="task">
-                <h1>IndexedDB demo</h1>
-                <div class="comments">
-                    - Husk at splitte ud i flere masterpages
-                </div>
-                <div class="subTasks">
-                    <div class="task">
-                        <h1>Masterpage</h1>
-                    </div>
-                    <div class="task">
-                        <h1>Print stylesheet</h1>
-                        <div class="comments">
-                            - Skal stadig registreres som @media=screen
-                                - Mål i mm.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="task4" class="task">
-                <h1>Umbraco på Azure Website</h1>
-                <div class="comments"></div>
-                <div class="subTasks">
-                    <div class="task">
-                        <h1>Masterpage</h1>
-                    </div>
-                    <div class="task">
-                        <h1>Print stylesheet</h1>
-                        <div class="comments">
-                            - Skal stadig registreres som @media=screen
-                            - Mål i mm.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="task5" class="task">
-                <h1>Projekt setup</h1>
-                <div class="comments">
-                    - Husk at splitte ud i flere masterpages
-                </div>
+        <section id="todos" data-bind="foreach: todos">
+            <div data-bind="attr: { id: id }" class="task selected">
+                <h1 data-bind="text: title"></h1>
+                <div class="comments" data-bind="text: comment"></div>
                 <div class="subTasks">
                     <div class="task">
                         <h1>Masterpage</h1>
