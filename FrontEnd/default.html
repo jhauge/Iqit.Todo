@@ -16,10 +16,13 @@
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" type="text/css" href="/css/jquery-ui/jquery-ui-1.8.21.custom.css" />
 
     <script src="/scripts/libs/modernizr-2.5.3.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="/scripts/knockout-2.1.0.debug.js"></script>
+    <script type="text/javascript" src="/scripts/libs/jquery-ui-1.8.21.custom.min.js"></script>
+    <script src="/scripts/libs/knockout-2.1.0.debug.js"></script>
+    <script src="/scripts/models/ko.bindings.js"></script>
     <script src="/scripts/classes/todo.js"></script>
     <script src="/scripts/classes/todoSet.js"></script>
     <script src="/scripts/classes/todoRepository.js"></script>
@@ -38,7 +41,7 @@
     <div role="main">
         <aside>
             <div id="tools">
-                <button data-bind="click: addTodo">Add item &raquo;</button>
+                <button data-bind="jqButton: true, click: addTodo">Add item &raquo;</button>
             </div>
         </aside>
         <section id="todos" data-bind="foreach: todos">
@@ -53,7 +56,6 @@
     </footer>
 
     <script src="/scripts/plugins.js"></script>
-    <script src="/scripts/script.js"></script>
 
 </body>
 </html>

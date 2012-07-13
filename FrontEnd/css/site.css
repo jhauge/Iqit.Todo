@@ -32,5 +32,3 @@ div.task div.subTasks { display: none; padding: 5px 0 5px 12px; }
 
 /* Sidebar --------------------------------------------- */
 div#tools { }
-    div#tools button { background-color: #efefef; border: 1px solid #551a8b; color: #000; display: inline-block; text-decoration: none; padding: 3px 10px; }
-    div#tools button:hover { background-color: #d8e5f7; color: #f52672; }
