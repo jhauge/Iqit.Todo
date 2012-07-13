@@ -18,11 +18,19 @@ header { height: 60px; margin-top: 40px; }
         
 /* Todo items ------------------------------------------ */
 #todos {  }
-    #todos div.task { margin: 0 0 15px 0; }
+    #todos div.task { margin: 0 0 15px 0; position: relative; }
     #todos > div.task { background-color: #efefef; border-left: solid 3px #551a8b; padding: 10px; }
+    #todos > div.task:hover { background-color: #d8e5f7; }
     #todos > div.task.selected { background-color: #cee0f8; }
     #todos h1 { color: #f52672; font: normal 16px/1.3em 'Century Gothic'; margin: 0; text-transform: uppercase; }
     #todos div.comments { font: normal 11px/1.3em Consolas; margin-top: 8px; }
     #todos div.comments:empty { display: none; }
 
+div.task a.removeBtn { cursor: pointer; display: inline-block; font-size: 0.6em; position: absolute; right: 7px; top: 7px; }
+div.task a.removeBtn:hover { color: #f52672; }
 div.task div.subTasks { display: none; padding: 5px 0 5px 12px; }
+
+/* Sidebar --------------------------------------------- */
+div#tools { }
+    div#tools button { background-color: #efefef; border: 1px solid #551a8b; color: #000; display: inline-block; text-decoration: none; padding: 3px 10px; }
+    div#tools button:hover { background-color: #d8e5f7; color: #f52672; }

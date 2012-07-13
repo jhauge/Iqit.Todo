@@ -19,37 +19,33 @@
 
     <script src="/scripts/libs/modernizr-2.5.3.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="/scripts/knockout-2.1.0.js"></script>
+    <script src="/scripts/knockout-2.1.0.debug.js"></script>
     <script src="/scripts/classes/todo.js"></script>
+    <script src="/scripts/classes/todoSet.js"></script>
+    <script src="/scripts/classes/todoRepository.js"></script>
     <script src="/scripts/models/default.js"></script>
 </head>
 <body>
     <header>
         <div>GTD</div>
-        <nav>
-            <a href="#" class="selected">work</a>
-            <a href="#">private</a>
-            <a href="#">admin</a>
+        <nav data-bind="foreach: todoSets">
+            <a href="#" data-bind="attr: { rel: id }, 
+                                   text: title, 
+                                   css: { selected: id == $root.selectedSetId() },
+                                   click: $root.selectSet"></a>
         </nav>
     </header>
     <div role="main">
-        <aside>Tags</aside>
+        <aside>
+            <div id="tools">
+                <button data-bind="click: addTodo">Add item &raquo;</button>
+            </div>
+        </aside>
         <section id="todos" data-bind="foreach: todos">
-            <div data-bind="attr: { id: id }" class="task selected">
+            <div data-bind="attr: { id: id }" class="task">
+                <a class="removeBtn" data-bind="click: $parent.removeTodo">X</a>
                 <h1 data-bind="text: title"></h1>
                 <div class="comments" data-bind="text: comment"></div>
-                <div class="subTasks">
-                    <div class="task">
-                        <h1>Masterpage</h1>
-                    </div>
-                    <div class="task">
-                        <h1>Print stylesheet</h1>
-                        <div class="comments">
-                            - Skal stadig registreres som @media=screen
-                            - Mål i mm.
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
     </div>

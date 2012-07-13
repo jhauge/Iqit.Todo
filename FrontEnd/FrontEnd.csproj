@@ -73,14 +73,20 @@
     <Content Include="humans.txt" />
     <Content Include="index.html" />
     <Content Include="robots.txt" />
+    <Content Include="scripts\classes\todoRepository.js" />
+    <Content Include="scripts\classes\todoSet.js" />
+    <Content Include="scripts\knockout-2.1.0.debug.js" />
+    <Content Include="scripts\knockout-2.1.0.js" />
     <Content Include="scripts\libs\jquery-1.7.2.js" />
     <Content Include="scripts\libs\jquery-1.7.2.min.js">
       <DependentUpon>jquery-1.7.2.js</DependentUpon>
     </Content>
     <Content Include="scripts\libs\modernizr-2.5.3.js" />
+    <Content Include="scripts\models\default.js" />
     <Content Include="scripts\plugins.js" />
     <Content Include="scripts\script.js" />
     <Content Include="css\site.css" />
+    <Content Include="scripts\classes\todo.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
