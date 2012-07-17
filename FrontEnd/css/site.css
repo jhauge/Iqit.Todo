@@ -26,8 +26,8 @@ header { height: 60px; margin-top: 40px; }
     #todos > div.task:hover { background-color: #d8e5f7; }
     #todos > div.task.selected { background-color: #cee0f8; }
     #todos h1 { color: #f52672; font: normal 16px/1.3em 'Century Gothic'; margin: 0; text-transform: uppercase; }
-    #todos div.comments { font: normal 11px/1.3em Consolas; margin-top: 8px; }
-    #todos div.comments:empty { display: none; }
+    #todos pre.comments { font: normal 11px/1.3em Consolas; margin-top: 8px; }
+    #todos pre.comments:empty { display: none; }
 
 div.task a.removeBtn { cursor: pointer; display: inline-block; font-size: 0.6em; position: absolute; right: 7px; top: 7px; }
 div.task a.removeBtn:hover { color: #f52672; }
