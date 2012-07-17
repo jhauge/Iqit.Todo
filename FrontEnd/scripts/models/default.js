@@ -1,4 +1,5 @@
-﻿/// <reference path="../knockout-2.1.0.js" />
+﻿/// <reference path="../libs/" />
+/// <reference path="../libs/knockout-2.1.0.js" />
 /// <reference path="../classes/todoRepository.js" />
 /// <reference path="../classes/todoSet.js" />
 /// <reference path="../classes/todo.js" />
@@ -7,9 +8,13 @@ var TodosModel = function (todoSets) {
     var self = this;
 
     // Data
-    self.selectedSetId = ko.observable(todoSets[0].id);
     self.todoSets = ko.observableArray(todoSets);
+    self.selectedTodo = ko.observable();
+    self.selectedSetId = ko.observable(todoSets[0].id);
     self.todos = ko.observableArray(todoSets[0].todos);
+    self.addingTodo = ko.observable(false);
+    self.addTodoTitle = ko.observable();
+    self.addTodoComment = ko.observable();
 
     // Behaviours
     self.selectSet = function (set) {
@@ -18,9 +23,24 @@ var TodosModel = function (todoSets) {
     }
 
     self.addTodo = function () {
-        var todo = new iqit.Todo("task5");
-        todo.title = "Umbraco on an Azure website";
+        self.addingTodo(true);
+        $("#dialogs").show();
+    };
+
+    self.cancelTodo = function () {
+        self.addingTodo(false);
+        self.addTodoTitle("");
+        self.addTodoComment("");
+        $("#dialogs").hide();
+    };
+
+    self.createTodo = function () {
+        var todo = new iqit.Todo({ title: this.addTodoTitle(), comment: this.addTodoComment() });
         self.todos.push(todo);
+        self.addingTodo(false);
+        self.addTodoTitle("");
+        self.addTodoComment("");
+        $("#dialogs").hide();
     };
 
     self.removeTodo = function () {

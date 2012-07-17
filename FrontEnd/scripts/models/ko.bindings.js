@@ -3,10 +3,17 @@
 ko.bindingHandlers.jqButton = {
     init: function (element) {
         $(element).button();
-    },
+    }
+};
 
-    update: function (element, valueAccessor) {
-        var currentValue = valueAccessor();
-        $(element).button("option", "disabled", currentValue.enable === false);
+ko.bindingHandlers.jqModal = {
+    init: function (element, valueAccessor) {
+        var value = valueAccessor;
+        $(element).dialog({
+            autoOpen: false,
+            minWidth: 400,
+            modal: true,
+            title: "Todo"
+        });
     }
 };

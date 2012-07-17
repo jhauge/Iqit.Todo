@@ -4,9 +4,9 @@
 var iqit = iqit || {};
 
 // TodoSet class -----------------------------------------------------
-iqit.TodoSet = function (id) {
-    this.id = id;
-    this.title = "";
+iqit.TodoSet = function (data) {
+    this.id = data.id || "newset";
+    this.title = data.title || "No title";
     this.todos = new Array();
 }
 
