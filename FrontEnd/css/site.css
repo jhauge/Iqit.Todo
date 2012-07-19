@@ -29,8 +29,9 @@ header { height: 60px; margin-top: 40px; }
     #todos pre.comments { font: normal 11px/1.3em Consolas; margin-top: 8px; }
     #todos pre.comments:empty { display: none; }
 
-div.task a.removeBtn { cursor: pointer; display: inline-block; font-size: 0.6em; position: absolute; right: 7px; top: 7px; }
-div.task a.removeBtn:hover { color: #f52672; }
+div.task div.editBtns { position: absolute; right: 7px; top: 3px; }
+div.task div.editBtns a { cursor: pointer; display: inline-block; font-size: 0.6em; }
+div.task div.editBtns a:hover { color: #f52672; }
 div.task div.subTasks { display: none; padding: 5px 0 5px 12px; }
 
 /* Sidebar --------------------------------------------- */
@@ -40,7 +41,7 @@ div#tools { }
 section#dialogs { background-color: rgba(200, 200, 200, 0.8); position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: none; }
 form.dialogContainer { background-color: #fff; left: 50%; margin-left: -200px; padding: 10px; position: absolute; top: 10px; width: 380px;  }
     form.dialogContainer h2 { background-color: #d8e5f7; font: normal 1.2em Consolas; padding: 5px; margin: 0 0 10px 0; }
-    form.dialogContainer section.form { border-bottom: solid 1px #808080; padding-bottom: 5px; }
+    form.dialogContainer section.form { padding-bottom: 5px; }
     form.dialogContainer section.buttons { padding-top: 10px; }
         form.dialogContainer section.buttons button { float: right; margin: 0 0 0 5px; }
     form.dialogContainer input[type='text'],

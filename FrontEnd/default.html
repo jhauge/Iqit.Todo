@@ -45,7 +45,10 @@
         </aside>
         <section id="todos" data-bind="foreach: todos">
             <div data-bind="attr: { id: id }" class="task">
-                <a class="removeBtn" data-bind="click: $parent.removeTodo">X</a>
+                <div class="editBtns">
+                    <a data-bind="click: $parent.editTodo">Edit</a>
+                    <a data-bind="click: $parent.removeTodo">X</a>
+                </div>
                 <h1 data-bind="text: title"></h1>
                 <pre class="comments" data-bind="text: comment"></pre>
             </div>

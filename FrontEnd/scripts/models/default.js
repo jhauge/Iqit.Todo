@@ -23,8 +23,17 @@ var TodosModel = function (todoSets) {
     }
 
     self.addTodo = function () {
+        self.selectedTodo(null);
         self.addingTodo(true);
         $("#dialogs").show();
+    };
+
+    self.editTodo = function () {
+        self.selectedTodo(this);
+        self.addTodoTitle(this.title());
+        self.addTodoComment(this.comment());
+        $("#dialogs").show();
+        self.addingTodo(true);
     };
 
     self.cancelTodo = function () {
@@ -35,8 +44,14 @@ var TodosModel = function (todoSets) {
     };
 
     self.createTodo = function () {
-        var todo = new iqit.Todo({ title: this.addTodoTitle(), comment: this.addTodoComment() });
-        self.todos.push(todo);
+        if (self.selectedTodo()) {
+            self.selectedTodo().title(this.addTodoTitle());
+            self.selectedTodo().comment(this.addTodoComment());
+        }
+        else {
+            var todo = new iqit.Todo({ title: this.addTodoTitle(), comment: this.addTodoComment() });
+            self.todos.push(todo);
+        }
         self.addingTodo(false);
         self.addTodoTitle("");
         self.addTodoComment("");
